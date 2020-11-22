@@ -11,10 +11,10 @@ enum Choice { view, delete }
 
 Future<CameraDescription> getCamera(CameraLensDirection dir) async {
   return await availableCameras().then(
-    (List<CameraDescription> cameras) => cameras.firstWhere(
-      (CameraDescription camera) => camera.lensDirection == dir,
-    ),
-  );
+      (List<CameraDescription> cameras) => cameras.firstWhere(
+            (CameraDescription camera) => camera.lensDirection == dir,
+          ),
+      TEST123);
 }
 
 FirebaseVisionImageMetadata buildMetaData(
@@ -64,8 +64,7 @@ ImageRotation rotationIntToImageRotation(int rotation) {
   }
 }
 
-Float32List imageToByteListFloat32(
-    imglib.Image image, int inputSize, double mean, double std) {
+Float32List imageToByteListFloat32(imglib.Image image, int inputSize, double mean, double std) {
   var convertedBytes = Float32List(1 * inputSize * inputSize * 3);
   var buffer = Float32List.view(convertedBytes.buffer);
   int pixelIndex = 0;
