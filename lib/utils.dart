@@ -42,6 +42,9 @@ Future<dynamic> detect(
   HandleDetection handleDetection,
   ImageRotation rotation,
 ) async {
+  print("QWEQWEQWE");
+  print("QWEQWEQWE");
+  print("QWEQWEQWE");
   return handleDetection(
     FirebaseVisionImage.fromBytes(
       image.planes[0].bytes,
