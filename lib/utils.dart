@@ -11,10 +11,10 @@ enum Choice { view, delete }
 
 Future<CameraDescription> getCamera(CameraLensDirection dir) async {
   return await availableCameras().then(
-      (List<CameraDescription> cameras) => cameras.firstWhere(
-            (CameraDescription camera) => camera.lensDirection == dir,
-          ),
-      TEST123);
+    (List<CameraDescription> cameras) => cameras.firstWhere(
+      (CameraDescription camera) => camera.lensDirection == dir,
+    ),
+  );
 }
 
 FirebaseVisionImageMetadata buildMetaData(
